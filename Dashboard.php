@@ -16,8 +16,8 @@ session_start();
 <a href="https://api.whatsapp.com/send?phone=8765606090&text=How can we help you." class="float">
 <i class="fa fa-whatsapp my-float"></i>
 
-<link rel="stylesheet" href="logo.css">
-<link rel="stylesheet" href="navelogo.css">
+<link rel="stylesheet" href="css/logo.css">
+<link rel="stylesheet" href="css/navelogo.css">
 
 </a>
   <style>

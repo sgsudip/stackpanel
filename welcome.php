@@ -12,12 +12,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <a href="https://api.whatsapp.com/send?phone=8765606090&text=How can we help you." class="float">
 <i class="fa fa-whatsapp my-float"></i>
-<link rel="stylesheet" href="logo.css">
+<link rel="stylesheet" href="css/logo.css">
 <link rel="stylesheet" href="css/welcome.css">
-<style>
 
-
-</style>
 </a>
 </head>
 <body>

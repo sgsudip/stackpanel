@@ -95,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Login</title>  
    
     <link rel = "stylesheet" type = "text/css" href = "style.css"> 
-      <link rel="stylesheet" href="navelogo.css">
+      <link rel="stylesheet" href="css/navelogo.css">
 
 	
 </head>  
