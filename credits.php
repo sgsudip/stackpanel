@@ -11,7 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
     <link rel="stylesheet" href="css/navelogo.css">
 
-  <link rel="stylesheet" href="containt.css">
+  <link rel="stylesheet" href="css/containt.css">
 <a href="https://api.whatsapp.com/send?phone=8765606090&text=How can we help you." class="float">
 <i class="fa fa-whatsapp my-float"></i>
 </a>
@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Main Stylesheet File -->
-        <link href="style1.css" rel="stylesheet">
+        <link href="css/style1.css" rel="stylesheet">
 
 
 <style>
