@@ -3,62 +3,64 @@
   <title>Stackpanel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- jquery minified 3.6.0 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- google fonts -->
   <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
+  <!-- font-awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <a href="https://api.whatsapp.com/send?phone=8765606090&text=How can we help you." class="float">
+  <!-- whatsapp api -->
+  <!-- <a href="https://api.whatsapp.com/send?phone=8765606090&text=How can we help you." class="float">
   <i class="fa fa-whatsapp my-float"></i>
+  </a> -->
   <link rel="stylesheet" href="css/navelogo.css">
   <link rel="stylesheet" href="css/logo.css">
   <link rel="stylesheet" href="css/welcome.css">
-  </a>
+  <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
-    <!-- navbar section using bootstrap -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<a class="navbar-brand" href="dashboard.php">
-    <img src="logo/logo.png" class='na-logo' />
-</a>
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+<!-- navbar section using bootstrap -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <span class="navbar-brand">
+        <a class="navbar-brand" href="dashboard.php">
+    ImageMarket
+        </a>
+        </span>
+<button id="toggle-button" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
-<div class="collpse navbar-collapse">
-    <ul class="nav navbar-nav mr-auto">
-    <li class="nav-item active">
-        <a class="nav-link" href="dashboard.php">
+<div class="collapse navbar-collapse" id="navbarCollapse" >
+    <div class="nav me-auto navbar-nav">
+    <a class="nav-link" href="dashboard.php">
             Dashboard
         </a>
-    </li>
-    <li class="nav-item active">
+ 
         <a class="nav-link" href="download.php">
             Downloads
         </a>
-    </li>
-    <li class="nav-item active">
-        <a href="credits.php">
+  
+        <a class="nav-link" href="credits.php">
             Credits
         </a>
-    </li>
-    <li class="nav-item active">
+   
         <a class="nav-link"  href="transaction.php">
             Transactions
         </a>
-    </li>
-	<li class="nav-item active">
-        <a href="contact1.php">
+  
+        <a class="nav-link" href="contact1.php">
             Contact Us
         </a>
-    </li>
-      <li class="nav-item">
+  
         <a class="nav-link" href="logout.php">
             <span class="glyphicon glyphicon-user">
             </span>
             Logout
         </a>
-    </li>
-      <li class="nav-item">
+   
       <span id="bt">
       Wallet balance(&#8377 <?php 
                     require_once "conn.php";
@@ -76,10 +78,10 @@
                     
                     ?>)
       </span>
-      </li>
-    </ul>
-
+    </div>
 </div> 
+</div>
+
 </nav>
 
 <!-- first container -->
@@ -278,9 +280,27 @@ if(isset($image)){
 <!-- razorpay javascript -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <!-- jquery -->
-<script src='js/jquery-3.6.1.min.js'>
-</script>
+<!-- <script src='js/jquery-3.6.1.min.js'>
+</script> -->
+
 <script>
+    if(document.getElementById("toggle-button")){
+        document.getElementsByClassName("navbar-toggler-icon")[0].addEventListener("click",(e)=>{
+          console.log(e.target.parentElement.parentElement.children[2]);
+          if(e.target.parentElement.parentElement.children[2].classList.contains("collapse")){
+            e.target.parentElement.parentElement.children[2].classList.add("show");
+            e.target.parentElement.parentElement.children[2].classList.remove("collapse");
+          }else{
+            e.target.parentElement.parentElement.children[2].classList.add("collapse");
+            e.target.parentElement.parentElement.children[2].classList.remove("show");
+          }
+          console.log(e.target.parentElement.parentElement.children[2].classList);
+          
+        })
+    }else{
+        console.log("no");
+    }
+
     function reloadpage(){
      download();
     }
@@ -298,28 +318,33 @@ function download(){
   document.getElementById('download-now').style.display='block'
   
   <?php
-   $ress=file_get_contents("https://vip.neh.tw/api/v2/order/$task_id/download?apikey=NQgwMaWl7sLG5CEwr1S4tsUa4FkWKi&responsetype=any&idn={yourwebhook}");
-$array=json_decode($ress,true);
+  $ress;
+  $array;
+  $success;
 
-$success=$array['success'];
+  if(isset($task_id)){
+    $ress=file_get_contents("https://vip.neh.tw/api/v2/order/$task_id/download?apikey=NQgwMaWl7sLG5CEwr1S4tsUa4FkWKi&responsetype=any&idn={yourwebhook}");
+    $array=json_decode($ress,true);
+    $success=$array['success'];
+  }
 
-if ($success<1) {
-
+  if(isset($success)){
+    if ($success<1) {
+        ?>
+        document.getElementById('loader').style.display='block'
+        <?php } 
+        $downloadLink;
+        if(isset($array)){
+            $downloadLink=$array['downloadLink'];
+        }    
+  }
 ?>
-
-document.getElementById('loader').style.display='block'
-<?php } 
-$downloadLink=$array['downloadLink'];
-
-?>
-  
-  
 }
+// download function end
+
 function closeboxd(){
   document.getElementById('download-now').style.display='none'
 }
-
-
 
 var options = {
     "key": "rzp_live_2vzROYhVbrWTyN", // Enter the Key ID generated from the Dashboard
