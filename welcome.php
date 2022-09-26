@@ -80,7 +80,7 @@
 </nav>
 
 <!-- first container -->
-<div class="container">
+<div class="first-section container">
   <h3>
     <p id="font-face">
       <b>Dashboard</b>
@@ -91,15 +91,22 @@
 </div>
 <!-- container div ends here -->
 <!-- second container -->
-<div class="container">
+<div class="second-section container">
 <p>Download Paid Stock </p><br>
 <p>Copy and paste the URL to the asset you want to download.</p>
 <p>STOCK URL</p>
- <form action="welcome.php" method="post" class="stock-url-form">
- <input  class="stock-url-input" name="myURL" type="url" style='height: 60px;' placeholder="Enter url here" required /> 
-<input type="submit" class='search-btn' title="Log In" name="search" value="search">
-</input>
-</form>
+
+  <form action="welcome.php" method="post" class="stock-url-form">
+    <div class="form-group">
+    <label for="stock-url-input">URL</label>
+    <input class="form-control stock-url-input" id="stock-url-input" name="myURL" type="url"  placeholder="Enter url here" required />
+    </div>
+ 
+    <div class="form-group">
+    <input type="submit" class='search-btn form-control btn btn-primary' title="Log In" name="search" value="search">
+    </input>
+    </div>
+  </form>
 </div>
 
 <!-- show box -->
@@ -131,7 +138,6 @@ $url=$_POST['myURL'];
 
 $result=file_get_contents("https://vip.neh.tw/api/stockinfo/%7Bsite%7D/%7Bid%7D?apikey=NQgwMaWl7sLG5CEwr1S4tsUa4FkWKi&url=$url");
 $arr=json_decode($result,true);
-echo '<pre>';
 if($arr['success']){
 $image=$arr['data']['image'];
 $title=$arr['data']['title'];
@@ -186,36 +192,56 @@ $price="0";
 }
 
 ?>
-<table style='text-align:center; font-size:22px; padding-right:20px;'>
- <tr ><th>Image</th><th>Id</th><th>Price</th><th>Source</th><th>Download</th></tr>
- <tr ><td><img src='<?php echo $image; ?>' width='200px' /> </td><td><?php echo $id; ?></td><td><?php echo $price; ?>₹</td><td><?php echo $site; ?></td>
-<td><button onClick='mybox()' id="confirm">Confirm Order</button></td></tr>
+<img class="selected-image" src='<?php echo $image; ?>' /> 
+
+<!-- table start -->
+<table class="table table-bordered table-responsive" style='text-align:center;'>
+  <tr>
+    <th>Id</th>
+    <th>Price</th>
+    <th>Source</th>
+    <th>Download</th>
+  </tr>
+  <tr>
+    <td><?php echo $id; ?></td>
+    <td><?php echo $price; ?>₹</td>
+    <td><?php echo $site; ?></td>
+    <td><button onClick='mybox()' id="confirm">Confirm Order</button></td>
+  </tr>
 </table>
-<div style="display:none" class="paybox" id="download-now">
+<!-- table end -->
 
 
-<p><button onClick='closeboxd()' class='close'>X</button></p>
-<h4>Now you are able to download </h4>
+<div class="paybox" id="download-now">
+<p>
+    <button onClick='closeboxd()' class='close'>X</button>
+</p>
+<h4>Now you are able to download.</h4>
 <p>Id</p>
-<div class='loader' id='loder' style='display:none;'></div>
+<div class='loader' id='loader' style='display:none;'></div>
 
-  <tr><td><button class='payBTN'><a href='<?php echo $downloadLink; ?>'>Download Now</a></button></td></tr></div>
-<div>
-
-<hr>
-<center>
-
-  <h3><p id="font-face">  <b>Services Cost</b></p></h3>
-
-
-
-</center>
-<div class="container">
-<p> <h2><b style='color:blue'>Per Image/File Prices:</b></h2></p>
+  <tr><td><button class='payBTN'><a href='<?php echo $downloadLink; ?>'>Download Now</a></button></td></tr>
+</div>
+<div class="heading-container">
+  <h3>
+    <p id="font-face " class="services-cost-heading">
+      <b>Services Cost</b>
+    </p>
+  </h3>
+</div>
+  <!-- container start -->
+<div class="third-section container">
+<p> 
+<h2>
+<b style='color:blue'>Per Image/File Prices:</b>
+</h2>
+</p>
+<!-- list of brands -->
 <ul style='list-style:none;' class='list-style'>
-<li style='padding:15px'><p><b Style='padding:20px'>&#62</b> <img src='logo/shutterstock.png' class='logo'width='40' height='auto' /> Shutterstock-<b style='color:blue'>&#8377 40.00</b>.
+<li style='padding:15px'><p><b Style='padding:20px'>&#62</b> <img src='logo/shutterstock.png' class='logo'width='40' height='auto' /> Shutterstock- <b style='color:blue'>&#8377 40.00</b>.
 
-</p></li>
+</p>
+</li>
 
 <li Style='padding:15px'><p><b Style='padding:20px'>&#62</b> <img src='logo/AdobeStock.png' class='logo'width='40' height='auto'/> Adobestock-<b style='color:blue'>&#8377 40.00</b></p></li>
 
@@ -234,12 +260,13 @@ $price="0";
 <li style='padding:15px'><p><b Style='padding:20px'>&#62</b> <img src='logo/123RF_Logo.png' class='logo'width='40' height='auto'/> 123rf-<b style='color:blue'>&#8377 45</b></p></li>
 </ul>
 </div>
-    </style>	
+<!-- container end -->
+<!-- razorpay javascript -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
+<!-- jquery -->
 <script src='js/jquery-3.6.1.min.js'>
 </script>
-  <script>
+<script>
     function reloadpage(){
      download();
     }
@@ -266,7 +293,7 @@ if ($success<1) {
 
 ?>
 
-document.getElementById('loder').style.display='block'
+document.getElementById('loader').style.display='block'
 <?php } 
 $downloadLink=$array['downloadLink'];
 

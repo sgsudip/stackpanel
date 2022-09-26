@@ -1,53 +1,59 @@
 body {
-    font-family: 'Work Sans';
-    display: flex;
-    flex-direction: column;
+  font-family: "Work Sans";
+  display: flex;
+  flex-direction: column;
 }
 
 font-face {
-    font-family: 'Visby Round CF';
-    src: local('Visby Round CF Demi Bold Oblique'), local('Visby-Round-CF-Demi-Bold-Oblique'),
-        url('VisbyRoundCF-DemiBoldOblique.woff2') format('woff2'),
-        url('VisbyRoundCF-DemiBoldOblique.woff') format('woff'),
-        url('VisbyRoundCF-DemiBoldOblique.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-  }
-
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-    font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-    z-index:100;
+  font-family: "Visby Round CF";
+  src: local("Visby Round CF Demi Bold Oblique"),
+    local("Visby-Round-CF-Demi-Bold-Oblique"),
+    url("VisbyRoundCF-DemiBoldOblique.woff2") format("woff2"),
+    url("VisbyRoundCF-DemiBoldOblique.woff") format("woff"),
+    url("VisbyRoundCF-DemiBoldOblique.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
 }
 
-.my-float{
-	margin-top:16px;
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 100;
 }
 
-#btn{  
-    color: #ffffff;  
-    background: #008000;  
-    padding: 7px;  
-    margin-left: 0%;  
-}  
+.my-float {
+  margin-top: 16px;
+}
 
-#bt{  
-    color: #fff;  
-    background: #337ab7;  
-    padding: 7px;  
-    /* margin-left: 0%;   */
-}  
+#btn {
+  color: #ffffff;
+  background: #008000;
+  padding: 7px;
+  margin-left: 0%;
+}
 
-table, th, td {
+#bt {
+  color: #fff;
+  background: #337ab7;
+  padding: 7px;
+  /* margin-left: 0%;   */
+}
+
+table {
+  max-width: 100vw !important;
+}
+table,
+th,
+td {
   border: 1px solid black;
   border-collapse: collapse;
 }
@@ -58,3 +64,34 @@ table, th, td {
   padding-left: 70px;
   padding-right: 70px;
 } */
+
+.stock-url-input {
+  height: 60px;
+  padding: 10px;
+  /* margin: 10px; */
+  max-width: 80vw;
+}
+
+.paybox {
+  display: none;
+}
+
+.selected-image {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.heading-container {
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    text-align: center;
+  }
+  .stock-url-input {
+    margin: auto;
+  }
+}
