@@ -18,15 +18,16 @@
 <body>
     <!-- navbar section using bootstrap -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="dashboard.php">
+    <img src="logo/logo.png" class='na-logo' />
+</a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
 <div class="collpse navbar-collapse">
     <ul class="nav navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="navbar-brand" href="Dashboard.php">
-            <img src="logo/logo.png" class='na-logo' />
-        </a>
-    </li>
     <li class="nav-item active">
-        <a class="nav-link" href="Dashboard.php">
+        <a class="nav-link" href="dashboard.php">
             Dashboard
         </a>
     </li>
@@ -58,7 +59,8 @@
         </a>
     </li>
       <li class="nav-item">
-      <submit id="bt"></span>Wallet balance(&#8377 <?php 
+      <span id="bt">
+      Wallet balance(&#8377 <?php 
                     require_once "conn.php";
 
                     $uname = $_POST['user'];
@@ -72,7 +74,8 @@
                        echo 0;
                      } 
                     
-                    ?>)</submit>
+                    ?>)
+      </span>
       </li>
     </ul>
 
@@ -185,15 +188,22 @@ else{
 }
 }
 else{
-  $image="https://images.app.goo.gl/b4auSGvuWhEsQRyG6";
+$image;
 $title="title";
 $id="0";
 $price="0";
 }
 
 ?>
-<img class="selected-image" src='<?php echo $image; ?>' /> 
+<img class="selected-image" src='<?php
+$placeholderimg = "assets/images/placeholder.png";
 
+if(isset($image)){
+    echo $image;
+} else{
+    echo $placeholderimg;
+}
+?>' /> 
 <!-- table start -->
 <table class="table table-bordered table-responsive" style='text-align:center;'>
   <tr>
@@ -205,7 +215,11 @@ $price="0";
   <tr>
     <td><?php echo $id; ?></td>
     <td><?php echo $price; ?>₹</td>
-    <td><?php echo $site; ?></td>
+    <td><?php if(isset($site)){
+        echo $site;
+     }else{
+        echo "No source available";
+     } ?></td>
     <td><button onClick='mybox()' id="confirm">Confirm Order</button></td>
   </tr>
 </table>
