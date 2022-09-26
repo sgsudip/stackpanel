@@ -37,15 +37,16 @@
   box-shadow: 2px 2px 3px #999;
   z-index: 100;
 }
+
 .close {
   font-size: 30px;
-
   border-radius: 8px;
   box-shadow: 2px 2px 3px #999;
   color: rgb(24, 20, 20);
   right: 100px;
 }
-.payBTN {
+
+.payBTN , .search-btn {
   background-color: skyblue;
   box-shadow: 2px 2px 3px #999;
   color: #fff;
@@ -53,10 +54,12 @@
   width: 200px;
   height: 60px;
 }
+
 .list-style {
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .img-table tr td {
   text-align: center !important;
   padding: 20px;

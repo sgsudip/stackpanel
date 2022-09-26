@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Stackpanel</title>
@@ -7,60 +6,58 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
-
+  <link href='https://fonts.googleapis.com/css?family=Work Sans' rel='stylesheet'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<a href="https://api.whatsapp.com/send?phone=8765606090&text=How can we help you." class="float">
-<i class="fa fa-whatsapp my-float"></i>
-<link rel="stylesheet" href="css/logo.css">
-<link rel="stylesheet" href="css/welcome.css">
-
-</a>
+  <a href="https://api.whatsapp.com/send?phone=8765606090&text=How can we help you." class="float">
+  <i class="fa fa-whatsapp my-float"></i>
+  <link rel="stylesheet" href="css/navelogo.css">
+  <link rel="stylesheet" href="css/logo.css">
+  <link rel="stylesheet" href="css/welcome.css">
+  </a>
 </head>
 <body>
-
-
-<nav class="navbar navbar-default">
-    <div class="collpse navbar-collapse">
-    <ul class="nav navbar-nav">
-      <li>
+    <!-- navbar section using bootstrap -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="collpse navbar-collapse">
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item">
         <a class="navbar-brand" href="Dashboard.php">
-            <img  src="logo/logo.png" class='na-logo' />
+            <img src="logo/logo.png" class='na-logo' />
         </a>
     </li>
-    <li class="active">
-        <a href="Dashboard.php">
+    <li class="nav-item active">
+        <a class="nav-link" href="Dashboard.php">
             Dashboard
         </a>
     </li>
-    <li class="active">
-        <a href="download.php">
+    <li class="nav-item active">
+        <a class="nav-link" href="download.php">
             Downloads
         </a>
     </li>
-    <li class="active">
+    <li class="nav-item active">
         <a href="credits.php">
             Credits
         </a>
     </li>
-    <li class="active">
-        <a href="transaction.php">
+    <li class="nav-item active">
+        <a class="nav-link"  href="transaction.php">
             Transactions
         </a>
     </li>
-	<li class="active">
+	<li class="nav-item active">
         <a href="contact1.php">
             Contact Us
         </a>
     </li>
-      <li>
-        <a href="logout.php">
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">
             <span class="glyphicon glyphicon-user">
             </span>
             Logout
         </a>
     </li>
-      <li>
+      <li class="nav-item">
       <submit id="bt"></span>Wallet balance(&#8377 <?php 
                     require_once "conn.php";
 
@@ -77,34 +74,37 @@
                     
                     ?>)</submit>
       </li>
-                    </ul>
+    </ul>
 
-    </div> 
+</div> 
 </nav>
+
+<!-- first container -->
 <div class="container">
-
-  
-  <h3> <p id="font-face">  <b>Dashboard</b></p></h3>
-
-  <p>Attention!
-<br>
-Added new websites and decreased the price of some stock websites.
-</p>
+  <h3>
+    <p id="font-face">
+      <b>Dashboard</b>
+    </p>
+  </h3>
+  <p>Attention! Added new websites and decreased the price of some stock websites.
+  </p>
 </div>
+<!-- container div ends here -->
+<!-- second container -->
 <div class="container">
 <p>Download Paid Stock </p><br>
 <p>Copy and paste the URL to the asset you want to download.</p>
 <p>STOCK URL</p>
-<center>
-  <form action="welcome.php" method="post">
- <input  name="myURL" type="url" style='width: 800px; height: 60px;'
-       placeholder="https://www.shutterstock.com/image-photo/silhouetted-loving-couple-sunset-1774166057" required /> 
-       <input type="submit" class='payBTN' title="Log In" name="search" value="search"></input>
+ <form action="welcome.php" method="post" class="stock-url-form">
+ <input  class="stock-url-input" name="myURL" type="url" style='height: 60px;' placeholder="Enter url here" required /> 
+<input type="submit" class='search-btn' title="Log In" name="search" value="search">
+</input>
 </form>
-</center>
 </div>
 
+<!-- show box -->
 <div id="showbox" style='display:none' class='paybox'>
+
 <button onClick='closebox()' class='close'>X</button>
 <br/><br/><br/>
 <p><b>You can use wallet to pay the <br> amount</b> <br>
@@ -117,7 +117,6 @@ Pay & Download
 
 <p><b>Pay via online method.</b><br>
 Debit card, Credit card, Net <br> banking and other available <br> methods
-<br>
 <button id="rzp-button1" class='payBTN'>
 Pay & Download
 </p>
