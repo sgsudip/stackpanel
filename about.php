@@ -31,18 +31,21 @@ body {
 }
 
 </style>
-  
-  
 </head>
 <body>
+
 <center>
-<br>
 <a href="home.php">
   <img  src="logo/logo.png" class='na-logo' />
- </a>
+</a>
 </center>
 
-<h3 > <b><p class="p1">#About Us - ImageMarket</p></b></h3>
+
+<h3 style="text-align: center;"> 
+<b>
+    <p class="p1">#About Us - ImageMarket</p>
+</b>
+</h3>
 
 
 <blockquote>
@@ -55,12 +58,7 @@ You can use Bitcoins or traditional money (Credit/Debit Cards) to buy credits an
 If you have any queries, feel free to contact us at <b>contact@imagemarket.xyz<b>
  
 
-</blockquote>
-
-
-
- 
- 
- </body>
-	</html>
+</blockquote> 
+</body>
+</html>
 	
