@@ -25,15 +25,16 @@
   
 </head>
 <body>
-<center>
 <br>
 <a href="home.php">
  <img src="logo.png" width="380" height="100" >
- </a>
-</center>
-<h3> <p> #Contact Us - ImageMarket</p></h3>
+</a>
+<h3> 
+<p> #Contact Us - ImageMarket</p>
+</h3>
 
-<blockquote><q>
+<blockquote>
+<q>
 If you have any queries, feel free to contact us at contact@imagemarket.xyz<br>
 
 We'll try to get back to you as soon as possible.
@@ -60,12 +61,7 @@ We'll try to get back to you as soon as possible.
 .my-float{
 	margin-top:16px;
 }
-
-    </style>	
-
-
- 
- 
- </body>
-	</html>
+</style>	
+</body>
+</html>
 	
