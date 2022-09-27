@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Stackpanel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -35,23 +35,18 @@
     <a class="nav-link" href="dashboard.php">
             Dashboard
         </a>
- 
         <a class="nav-link" href="download.php">
             Downloads
         </a>
-  
         <a class="nav-link" href="credits.php">
             Credits
         </a>
-   
         <a class="nav-link"  href="transaction.php">
             Transactions
         </a>
-  
         <a class="nav-link" href="contact1.php">
             Contact Us
         </a>
-  
         <a class="nav-link" href="logout.php">
             <span class="glyphicon glyphicon-user">
             </span>

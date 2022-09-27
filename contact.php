@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Stackpanel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -24,10 +24,11 @@
   
   
 </head>
-<body>
+<body style="text-align: center;">
 <br>
+
 <a href="home.php">
- <img src="logo.png" width="380" height="100" >
+ <img src="logo.png" width="400">
 </a>
 <h3> 
 <p> #Contact Us - ImageMarket</p>
@@ -53,13 +54,13 @@ We'll try to get back to you as soon as possible.
 	color:#FFF;
 	border-radius:50px;
 	text-align:center;
-  font-size:30px;
+    font-size:30px;
 	box-shadow: 2px 2px 3px #999;
-  z-index:100;
+    z-index:100;
 }
 
 .my-float{
-	margin-top:16px;
+    margin-top:16px;
 }
 </style>	
 </body>
